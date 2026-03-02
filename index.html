@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namokar Tirth - Spiritual Knowledge City</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="namokar.css">
+  
+  <style>
+    .page-section { display: none; animation: fadeIn 0.6s ease-in-out; }
+    .active-section { display: block; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    
+    .content-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .nav-menu li a { cursor: pointer; }
+    .gold-text { color: #d4af37; font-weight: bold; }
+
+    .video-card { background: #f8f9fa; border-radius: 10px; padding: 15px; border-bottom: 4px solid #4a148c; transition: 0.3s; }
+    .video-card:hover { transform: scale(1.02); }
+    .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; transition: 0.3s; cursor: pointer; }
+    .gallery-img:hover { filter: brightness(70%); }
+    .contact-info-box { background: #4a148c; color: white; padding: 30px; border-radius: 15px; height: 100%; }
+    
+    .side-nav-modern ul li a { cursor: pointer; display: block; padding: 8px 0; transition: 0.3s; text-decoration: none; color: inherit; }
+    .side-nav-modern ul li a:hover { color: #d4af37; padding-left: 5px; }
+    
+    .page-content { animation: fadeIn 0.5s ease; }
+
+   main.container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    
+    .row {
+        align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="brand d-flex align-items-center">
+        <img src="jainlogo.png" alt="logo"style="height: 80px; width: auto; margin-right: 15px;">
+        <div class="brand-text">
+          <span class="title">NAMOKAR TIRTH</span>
+          <br><span class="subtitle">Jain & Buddhist Wisdom Center</span>
+        </div>
+      </div>
+      <nav class="d-none d-lg-block">
+        <ul class="nav-menu">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('jainism')">Jainism</a></li>
+          <li><a onclick="showPage('literature')">Literature</a></li>
+          <li><a onclick="showPage('lectures')">Lecture</a></li>
+          <li><a onclick="showPage('groups')">Namokar Groups</a></li>
+          <li><a onclick="showPage('gallery')">Gallery</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </nav>
+     
+    </div>
+  </header>
+
+  <div id="home" class="page-section active-section">
+      <section class="hero-box">
+        <div class="hero-overlay">
+          <h1 class="fade-in">Pathways to <span class="gold-text">Enlightenment</span></h1>
+          <p>Discover the profound teachings of Tirthankaras and the Buddha.</p>
+        </div>
+      </section>
+
+      <main class="container my-5" id="main-content-area">
+        <div class="row g-4 mb-5" id="hero-cards">
+          <div class="col-md-6">
+            <div class="spiritual-card jain-card">
+              <div class="card-icon"><i class="fas fa-om"></i></div>
+              <h3>The Jain Path</h3>
+              <p>Guided by the 24 Tirthankaras, focusing on Anekantavada and absolute Ahimsa.</p>
+              <img src="first.png" class="img-fluid rounded" alt="Jain Temple">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="spiritual-card buddha-card">
+              <div class="card-icon"><i class="fas fa-dharmachakra"></i></div>
+              <h3>The Buddha's Way</h3>
+              <p>Exploring the Four Noble Truths and the Eightfold Path for liberation from suffering.</p>
+              <img src="budh.png" class="img-fluid rounded" alt="Lord Buddha">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <aside class="col-lg-3">
+            <div class="side-nav-modern">
+              <h4>Essential Services</h4>
+              <ul>
+                <li><a onclick="showPage('acharya')"><i class="fas fa-user-tie"></i> Achary Shree Parichay</a></li>
+                <li><a onclick="showPage('ideology')"><i class="fas fa-lightbulb"></i> Namokar Ideology</a></li>
+                <li><a onclick="showPage('mobile-hospital')"><i class="fas fa-ambulance"></i> Mobile Hospital</a></li>
+                <li><a onclick="showPage('aradhana')"><i class="fas fa-pray"></i> Aradhana Centre</a></li>
+                <li><a onclick="showPage('gallery')"><i class="fas fa-camera-retro"></i> Photo Gallery</a></li>
+                <li><a onclick="showPage('reach')"><i class="fas fa-map-marked-alt"></i> How to Reach</a></li>
+                <li><a onclick="showPage('jinvani')"><i class="fas fa-book-open"></i> Jinvani Upasana Kendra</a></li>
+                <li><a onclick="showPage('education')"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a onclick="showPage('ayurvedic')"><i class="fas fa-hospital-alt"></i> Ayurvedic Hospital</a></li>
+                <li><a onclick="showPage('guesthouse')"><i class="fas fa-hotel"></i> Guest House Centre</a></li>
+                <li><a onclick="showPage('tyagi-niwas')"><i class="fas fa-home"></i> Tyagi Niwas</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <article class="col-lg-9">
+            <div id="dynamic-content-area">
+                
+                <div id="default-philosophy" class="page-content">
+                    <div class="glass-article">
+                      <h2>Philosophy of Peace</h2>
+                      <p class="intro-text">Namokar Tirth is not just a location; it's a movement...</p>
+                      <blockquote class="peace-quote">"Hatred does not cease by hatred..." - Lord Buddha</blockquote>
+                      <div class="feature-images d-flex gap-2">
+                        <img src="second.png" alt="1" style="width:30%">
+                        <img src="third.png" alt="2" style="width:30%">
+                        <img src="fourth.png" alt="3" style="width:30%">
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                        <h2 class="fw-bold">Welcome to Jain Knowledge City</h2>
+                        <p>Welcome to the Jain Knowledge City, a serene, scholarly environment dedicated to the preservation, study, and promotion of ancient Jain philosophy and wisdom. This intellectual hub serves as a bridge between the spiritual depth of the past and the contemporary world, offering a deep dive into the principles of non-violence (Ahimsa), self-discipline, and the pursuit of truth. Designed as a sanctuary for seekers of knowledge, the city provides access to extensive scriptures, research on Jain history, and insights into the lives of Tirthankaras. Whether you are exploring the profound logic of Anekantavada or looking for insights into mindful living, Jain Knowledge City is a welcoming space for fostering intellectual growth, ethical living, and spiritual liberation. </p>
+                    </div>  
+                </div>
+
+                <div id="acharya" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2 class="gold-text">Achary Shree Parichay</h2>
+<section class="acharya-profile">
+    <h2>Parichay</h2>
+    <p><strong>Parichay :</strong> Pragyashraman Acharya Shri 108 Devnandi Maharaj</p>
+    <p><strong>Name before Diksha :</strong> Mulayamsing</p>
+    <p><strong>Father’s Name :</strong> Shri Premchandji Singhai</p>
+    <p><strong>Mother’s Name :</strong> Shrimati Shiladevi Singhai</p>
+    <p><strong>Birth Place :</strong> Shahrarh (M.P.)</p> 
+    <p><strong>Date of Birth :</strong> 15 August</p>
+    <p><strong>Griha Tyag :</strong> At the age of 16</p>
+    <p><strong>Muni Diksha :</strong> 31 March 1982, Hasan (Karnataka)</p>
+    <p><strong>Diksha Guru :</strong> Ganadhipati Gandharacharya Shri 108 Kunthusangarji Maharaj</p>
+    <p><strong>Date of Acharyapad :</strong> 5 April 1998, Jathala (Aurangabad)</p>
+    <p><strong>Books Written :</strong> More than 40 books including Dev Shilpa, Vastu Vaibhav, Mantra Sanhita, Vastu Chintamani, etc.</p>
+    <p><strong>Jirnodhar (Innovations) :</strong> More than 50 innovations of old Jain temples including 17 from Tamil Nadu (2009), many Panch Kalyanak with Shrimantra, many Diksha to Shishyas and several Sallekhana Samadhis.</p>
+    <p><strong>Panchkalyanak :</strong> More than 50 Panch Kalyanak with Shri Mantra</p>
+    <p><strong>Diksha Given :</strong> More than 75 devotees including 35 Muni Diksha, 13 Kshullak Diksha, 16 Aryeeka Diksha, 12 Kshullika Diksha</p>
+     <p><strong>Sallekhana :</strong> 30 Muni/Kshullak and 18 Aryeeka/Kshullika attained Samadhi with Sallekhana under Pujya Shree</p>
+     <p><strong>Chaturmas :</strong> 33 Chaturmas held in Maharashtra, Karnataka, Madhya Pradesh, Chhattisgarh, Bihar, Tamil Nadu</p>
+    <p><strong>Public Welfare :</strong> Distribution of Jaipur Foot, ear-trumpets, educational literature, food and employment for poor people, bicycles for disabled persons, etc.</p>
+     <p><strong>Titles :</strong> Saraswatacharya, Pragyashraman, Gyanyogi, Rashtra Sant, Shraman Sanskriti Sanvardhak, Pravachan Kesari, Charitra Diwakar, Sarvodayee Sant, Vastu Visharad, Siddhant Ratnakar, Jain Vachaspati, etc.</p>
+    <p><strong>Dream / Wish :</strong> Namokar Tirth - A Jain Knowledge City</p>
+</section>
+                    </div>
+                </div>
+
+ <div id="ideology" class="page-content" style="display:none;">
+     <div class="content-box">
+         <h2 class="gold-text">Namokar Ideology</h2>
+      <section class="ideology">
+
+    <h3>Blessings of Acharya - Guruwar</h3>
+
+    <div class="blessing-section">
+        <img src="acharya.png" alt="Acharya Image" class="left-img">
+
+        <p>
+            Param Pujya Saraswatacharya, Sarvodayi Rashtrasant, 
+            Pragyashraman 108 Acharya Shri Devnandi Gurudev received 
+            special grace, blessings and guidance from Ganadhipati 
+            Gandharacharya Shri Kunthusagar for the creation of this 
+            Namokar Teerth, conceptualised and determined by himself.
+            He gets true blessings of all the Param Pujya Acharya and 
+            Muni Sangh across India as well.
+            Jain and non-Jain society will feel lucky and proud to have 
+            such a wonderful inspiration by construction of this shrine 
+            of the Jain faith through educational and devotional social 
+            ratnatrayas.
+        </p>
+    </div>
+
+    <h3>Namokar Teerth - A Jain Knowledge City</h3>
+
+    <div class="knowledge-city">
+        <ul>
+            <li>First time in the world, introduction of Jain culture and principles through animation and music.</li>
+            <li>Lively manner Samavsharan by advance, modern and latest technology.</li>
+            <li>World true Namokar spells and Vidya Jain Research Center.</li>
+            <li>Spiritual Development Center for individuals and community.</li>
+            <li>Huge and wonderful statues of Panch Parmeshthi.</li>
+            <li>Fully equipped Education Center.</li>
+            <li>Hostel facility available.</li>
+             <li>Huge and Nice Garden.</li>
+            <li>Saraswati Temple..</li>
+            <li>Vast Hall.</li>
+            <li>Good Hospice Facility with all Amenities.</li>
+            <li>Cessation Temple: A Liberation from adiction.</li>
+            <li>Temple of Atonement.</li>
+            <li>Guru Temple.</li>
+            <li>	Guru Temple.</li>
+            <li>Meditation Temple.</li>
+
+
+        </ul>
+    </div>
+
+</section>
+
+                    </div>
+                </div>
+
+<div id="mobile-hospital" class="page-content"style="display:none;">
+
+    <div class="content-box">
+
+        <h2>Mobile Hospital Services</h2>
+        <p><strong>On the Inspiration of Acharya Shri</strong></p>
+
+        <p>
+        करुणा मूर्ती श्री की भावना बड़ी दिलदार,<br>
+        महंगाई के युग में गरीबों का कौन है साथीदार |<br><br>
+
+        रोगियों की निःशुल्क सेवा का किया इन्होंने विचार,<br>
+        णमोकार चिकित्सा रथ के माध्यम से,<br>
+        जन मानस को हुआ हर्ष अपार ||
+        </p>
+
+        <img src="acharya1.png" alt="Acharya Image" style="width:200px; margin-bottom:20px;">
+
+        <section class="mobile-hospital">
+
+            <h2>Namokar Mobile Hospital</h2>
+
+            <div class="hospital-container">
+
+                <!-- Left Images -->
+                <div class="hospital-images">
+                    <img src="ambulence.png" alt="Service Image">
+                    <img src="strature.png" alt="Ambulance">
+                    <img src="insidevan.png" alt="Inside View">
+                </div>
+
+                <!-- Right Content -->
+                <div class="hospital-content">
+
+                    <p>
+                        Now a days, going to hospitals for treatment in such era of inflation
+                        is difficult job for mankind. Most of the time, in absence of treatment
+                        poor people suffer a lot.
+                        Inspired by Acharya Shri, Namokar Medical Chariot is equipped with
+                        all facilities and travels in rural areas to serve poor people.
+                    </p>
+
+                    <p>
+                        More than ten thousand people’s eye operation, Jaipur Foot,
+                        hearing aids, wheel-chair, ECG, blood pressure, glucose etc.
+                        free services have been provided through this welfare activity.
+                    </p>
+
+                    <h3>Life Membership :</h3>
+
+                    <p>
+                        You can become life member in this noble act by donating
+                        Rs 11000 per person. You will be honoured with certificate
+                        and special blessings from Acharyap </p>
+                        <h4>Donation Details</h4>
+
+                    <p><strong>Bank Name :</strong> HDFC</p>
+                    <p><strong>A/C No :</strong> 07367620000023</p>
+                    <p><strong>Contact Person :</strong> Brahmachari Vaishali Didi</p>
+                    <p><strong>Mobile No :</strong> +91-9448691185</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+     </div>
+
+
+<div id="aradhana" class="page-content" style="display:none;">
+
+    <div class="content-box">
+
+        <h2>Aradhana Centre</h2>
+        <h4>Adoration of Namokar Mahamantra...</h4>
+
+        <img src="ardhnacenter.png" alt="Aradhana Center" style="width:300px; margin-bottom:20px;">
+
+        <p>
+        Faith, education, service, ethics, organization, coordination and cooperation 
+        coordinated by the idea of the pre-construction concept of Tirth Namokar gives 
+        encouragement to each Namokar Tirth disciple.
+
+        The mantra refers to the powers of the glory of ancient mythology meets sufficiency. 
+        Devotee will research on this Namokar worship spell in the Aradhana Center.
+
+        Panchparmeshti is the source for power of the Namokar Spell. 
+        An unprecedented experiment for realization of different properties of 
+        Panchparmeshti told by Tirthankar have been planned on this Namokar Tirth.
+
+        This Tirth will consist of:
+        <br><br>
+        • 46 feet Stone Idol of Arihant Parmeshti (46 attributes) <br>
+        • 36 feet Idol of Sidhha Parmeshti (8 attributes) <br>
+        • 36 feet Idol of Acharya Parmeshti (36 attributes) <br>
+        • 25 feet Idol of Upadhyay Parmeshti (25 attributes) <br>
+        • 28 feet Idol of Sadhu Parmeshti (25 attributes)
+
+        <br><br>
+        These Idols will be supported by moving pictures and will be 
+        one of the main attractions of this Tirth.
+        </p>
+
+    </div>
+
+</div>
+<div id="gallery" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Photo Gallery</h2>
+                        <img src="namokarsthal.png" alt="namokarsthal">
+                        <img src="acharya.png" alt="achryaji">
+                        <img src="ardhnacenter.png" alt="ardhnacenter">
+                        <img src="ayurvedichospital.png" alt="ayurvedichospital">
+                        <img src="budh.png" alt="budh">
+                        <img src="educationcenter.png" alt="education center">
+                        
+                    </div>
+                </div>
+
+
+                <div id="jinvani" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Jinvani Upasana Kendra</h2>
+                        <img src="jinvanicenter.png" alt="jinvani center">
+                        <p>Here a major goal of the Shrine is to care of Jinwani mother. Thats why a vast collection of ancient mythological Books will be aggressively made ​​available in huge Library.
+
+Here rare as well as readily unavailable mythological Booke will be made available for readers and will be sale at lower price.
+
+Also research and publication on Jain Mantra, Tantra, Yantra, Astrology, Vastu and crafts work will be be carried out here from the Publication Center</p>
+                    </div>
+                </div>
+
+                <div id="education" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Education</h2>
+                        <img src="educationcenter.png" alt="education center">
+                        <p>The creation of a strong society is not based on only faith but also all components of society must be educated. By adopting modern education and moral spiritual wisdom, today human can become power for own family, community and country. Today primary education is necessary, but traditional education is not just enough. Resolution of establish of an important center of higher education on this pilgrimage is the outcome of the ideology and inspiration of Pujya Gurudev.
+
+With college education from primary education to higher level- a vision of higher vocational education training center where Company Secretary, Managament education, etc to be established and Training will be provided for the same on this pilgrimage. With the vision of globalization, micro branches of science, art, language, science and medical education will also be provided here by the inspiration Purjy Guru Ji.
+
+It may be remarkably mentioned here that Gurudeva also want to have spiritual touch of Jainism philosophy through research and developement with all these modern science branches. To assimilate the basic principles of Jainism, arrangements of question bank consisting of more than 10,000 questions would be made here.
+Ranging from primary education to higher education is also being planned with a good hostel facilities for all Jain students with minimal small fees.</p>
+                    </div>
+                </div>
+
+                <div id="ayurvedic" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Ayurvedic Hospital</h2>
+                        <img src="ayurvedichospital.png" alt="Ayurvedic Hospital">
+                        <p>Namokar Pilgrim will work as an inspiration and guide for the society by holding friendly gesture for the act of faith.
+
+To serve the people and saint who take vows to go ahead on path of salvation by keeping them trouble-free, the well equipped hospital is determined on this pilgrimage.
+
+Here along with the modern medicine Ayurveda, Forest Osdhi, Natural medicine and non-natural medical methods will be recourse.
+
+Nursing and medical treatment for animals - Birds will also be arranged here.
+</p>
+                    </div>
+                </div>
+
+                <div id="guesthouse" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Guest House Centre</h2>
+                        <img src="guesthouse.png" alt="Guest House">
+                        <p>Continual visits from several visitors will certainly be there on Namokar Tirth as this pilgrimage is located near to other ancient pilgrimage shrine like Mangeetungi, Gajpntha, Kachner, Paithan, Ellora, etc.
+
+So here extremely well-equipped, modern grand Tourist Ventricles with food canteen provision is planned.
+
+Here as devotees will have exposure along with the Preaching of Param Pujya Jain Saints, continous visits from devotees is expected at Namokar Tirth.</p>
+                    </div>
+                </div>
+
+                <div id="tyagi-niwas" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>Tyagi Niwas</h2>
+                        <img src="tyaginiwas.png" alt="Tyagi Niwas">
+                        <p>For devotee saint as well as for the devotee who have take vows, well equipped Solitaire Hermitage jhave been planned. All time service including their food arrangement for the old aged, weak and sick saint will also be provided here with specialised service for those who have adopted "Salekhna". By this services and provision one can smoothly follow their fast, concentration on spiritual studies, meditation without any kind of interruption.
+
+Moving ahead from the narrow mindset of cultism, following the tradition of "Arsh" rout is the native vision of Namokar Tirth.</p>
+                    </div>
+                </div>
+
+                <div id="reach" class="page-content" style="display:none;">
+                    <div class="content-box">
+                        <h2>How to Reach</h2>
+                        <img src="reach.png" alt="Reach">
+                       <h2>Nearby Cities from Namokar Tirth</h2>
+
+        <p><strong>Shirdi Airport (Proposed):</strong> 75 km</p>
+        <p><strong>Manmad Railway Station:</strong> 27 km</p>
+        <p><strong>Nashik (Gajpantha):</strong> 52 km</p>
+        <p><strong>Chandwad:</strong> 10 km</p>
+        <p><strong>Mangi Tungi Siddh Kshetra:</strong> 60 km</p>
+        <p><strong>Kachner Atishay Kshetra:</strong> 150 km</p>
+        <p><strong>Mumbai:</strong> 250 km</p>
+        <p><strong>Mahuaa:</strong> 200 km</p>
+        <p><strong>Surat:</strong> 230 km</p>
+
+    </div>
+                    </div>
+                </div>
+
+            </div>
+          </article>
+        </div>
+      </main>
+  </div>
+
+  <div id="jainism" class="page-section container my-5">
+      <div class="content-box">
+          <h2 class="gold-text">Jainism & 24 Tirthankaras</h2>
+          <p>Jainism - The 'Jains' are the followers of the Jinas. 'Jina' literally means 'Conqueror.' He who has conquered love and hate, pleasure and pain, attachment and aversion, and has thereby freed `his' soul from the karmas obscuring knowledge, perception, truth, and ability, is a Jina. The Jains refer to the Jina as God. They teach us to reduce vices like rãg (attachment), dvesh (aversion), krodh (anger), màn (pride), mãyã (deceit) and lobh (greed).
+
+Jain religion is unique in that, during its existence of over 5000 years, it has never compromised on the concept of nonviolence either in principle or practice. Jainism upholds nonviolence as the supreme religion (Ahimsa Paramo Dharmah) and has insisted upon its observance in thought, word, and deed at the individual as well as social levels. The holy text Tattvartha Sutra sums it up in the phrase 'Parasparopagraho Jivanam' (all life is mutually supportive). Jain religion presents a truly enlightened perspective of equality of souls, irrespective of differing physical forms, ranging from human beings to animals and microscopic living organisms. Humans, alone among living beings, are endowed with all the six senses of seeing, hearing, tasting, smelling, touching, and thinking; thus humans are expected to act responsibly towards all living beings by being compassionate, non-egoistic, fearless, forgiving, and rational.
+
+Jainism recognizes this fact while analysing the Universe and maintains that the whole Universe can be broadly divided into two categories, viz., Jiva and Ajiva, meaning motivating conscious and unconscious matter thus pervading everything noticed in this Universe. On the basis of this finding, about two thousand five hundred years ago, not with the help of any laboratory testing but by sheer analytical logic, the Jina seers saw the life force not only in plants and vegetables but also in so called inanimate matter such as earth, water and air.
+
+The jain code of conduct is made up of the following five vows, and all of their logical conclusions:
+
+Ahimsa (nonviolence)
+Satya (truthfulness)
+Asteya (non-stealing)
+Aparigraha (non-possessiveness)
+Brahmcharya (chastity)
+Jain religion focuses much attention on Aparigraha, non-possessiveness towards material things through self-control, self-imposed penance, abstinence from over-indulgence, voluntary curtailment of one's needs, and the consequent subsiding of the aggressive urge.
+
+The Jains are divided into two major sects, Digambar and Svetambar. The differences between the two sects are minor and relatively obscure. Digambar Jain monks do not wear clothes while Svetambar Jain monks, wear white, seamless clothes.
+</p>
+      </div>
+  </div>
+
+  <div id="literature" class="page-section container my-5">
+      <div class="content-box">
+          <h2 class="fw-bold text-center">Sacred Literature</h2>
+          <div class="row g-4 mt-3">
+            <p>Jains incorporate a number of rituals into their daily life. Spreading the grain for the birds in the morning, and filtering or boiling the water for the next few hours' use are ritual acts of charity and non-violence.
+
+Some people dismiss the ritual acts as superstition. Others recognize that while the Jain idols have no miraculous powers, daily rituals help the worshipper towards a reverent state of mind.</p>
+              <div class="col-md-4"><div class="content-box border-top border-warning"><h5>Agam</h5></div></div>
+              <div class="col-md-4"><div class="content-box border-top border-primary"><h5>Navkar</h5></div></div>
+              <div class="col-md-4"><div class="content-box border-top border-danger"><h5>Buddhist</h5></div></div>
+          </div>
+      </div>
+  </div>
+
+
+  <div id="lectures" class="page-section container my-5">
+
+  <h2 class="text-center mb-4">Lectures</h2>
+
+  <div class="row">
+
+  
+    <div class="col-md-3">
+    <ul style="list-style:none; padding:0;">
+  <li><a href="#" class="lecture-link" data-file="audios/audio1.mp3">Pravachan 1</a></li>
+  <li><a href="#" class="lecture-link" data-file="audios/audio3.mp3">Pravachan 2</a></li>
+  <li><a href="#" class="lecture-link" data-file="audios/audio2.mp3">Pravachan 3</a></li>
+  <li><a href="#" class="lecture-link" data-file="audios/audio4.mp3">Pravachan 4</a></li>
+</ul>
+
+    </div>
+
+  
+    <div class="col-md-9">
+      <div style="background:#f8f9fa; padding:20px; border-radius:15px;">
+      <h4 id="nowPlaying">Now Playing</h4>
+<audio id="audioPlayer" controls style="width:100%;">
+</audio>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+   <div id="groups" class="page-section container my-5">
+      <div class="content-box">
+          <h2 class="gold-text">Namokar Groups</h2>
+          <h5>Namokar Mahila Mandal</h5>
+          <p>Jains incorporate a number of rituals into their daily life. Spreading the grain for the birds in the morning, and filtering or boiling the water for the next few hours' use are ritual acts of charity and non-violence.</p>
+           <h5>Namokar Yuva Group</h5>
+           <p>Some people dismiss the ritual acts as superstition. Others recognize that while the Jain idols have no miraculous powers, daily rituals help the worshipper towards a reverent state of mind.
+</p>
+<p>
+To Register in any of the Namokar Group please 
+<a href="#" onclick="showRegistration()">click here...</a>
+</p>
+<div id="registrationForm" style="display:none; margin-top:30px;">
+
+    <h2>Registration Form</h2>
+
+    <form>
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><br>
+
+        <label>Address:</label><br>
+        <input type="text" name="address"><br><br>
+
+        <label>City:</label><br>
+        <input type="text" name="city"><br><br>
+
+        <label>State:</label><br>
+        <input type="text" name="state"><br><br>
+
+        <label>Pin Code:</label><br>
+        <input type="text" name="pincode"><br><br>
+
+        <label>Email Id:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <label>Reason:</label><br>
+        <select name="reason">
+            <option>Mahila Mandal</option>
+            <option>Yuva Group</option>
+            <option>Volunteer</option>
+        </select>
+        <br><br>
+
+        <label>Comments:</label><br>
+        <textarea name="comments"></textarea>
+        <br><br>
+
+        <label>How do you know?</label><br>
+        <select name="reference">
+            <option>Friends</option>
+            <option>Social Media</option>
+            <option>Website</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+
+        </div>
+  </div>
+
+ 
+
+  <div id="gallery" class="page-section container my-5">
+      <h2 class="text-center mb-5">Spiritual Photo Gallery</h2>
+      <div class="row g-4">
+          <div class="col-md-4"><img src="first.png" class="gallery-img shadow"></div>
+          <div class="col-md-4"><img src="second.png" class="gallery-img shadow"></div>
+          <div class="col-md-4"><img src="third.png" class="gallery-img shadow"></div>
+      </div>
+  </div>
+
+  <div id="contact" class="page-section container my-5">
+
+  <div class="row">
+
+    <!-- Left Info Box -->
+    <div class="col-md-4">
+      <div style="background:#5a189a; color:white; padding:30px; border-radius:20px;">
+        <h3>Contact Info</h3>
+        <p>Malsane, Tal. Chandwad, Dist. Nashik,
+MAHARASHTRA, INDIA</p>
+        <p>Email: info@namokartirth.com</p>
+        <p>Phone: +91 9404006108</p>
+      </div>
+    </div>
+
+    <!-- Right Form -->
+    <div class="col-md-8">
+      <div style="background:#f8f9fa; padding:30px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.08);">
+
+        <h3 style="margin-bottom:20px;">Send a Message</h3>
+
+        <form id="contactForm">
+
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+          </div>
+
+          <div class="mb-3">
+            <input type="tel" class="form-control" placeholder="Mobile Number" id="mobile" required>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject" id="subject" required>
+          </div>
+
+          <div class="mb-3">
+            <textarea class="form-control" placeholder="Your Message" id="message" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn" 
+          style="background:linear-gradient(45deg,#d4af37,#b8860b); color:white; width:100%; padding:10px; border-radius:30px;">
+            Submit
+          </button>
+
+        </form>
+
+        <p id="formMsg" style="margin-top:15px; color:green; display:none;">
+          Message Sent Successfully ✅
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+  <footer>
+    <div class="container text-center py-4">
+      <p>&copy; 2026 Namokar Tirth Knowledge City | Unity in Diversity</p>
+    </div>
+  </footer>
+
+  <script>
+
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(name === "" || mobile === "" || subject === "" || message === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    // Simple mobile validation (10 digits)
+    if(!/^[0-9]{10}$/.test(mobile)){
+        alert("Enter valid 10 digit mobile number");
+        return;
+    }
+
+    document.getElementById("formMsg").style.display = "block";
+
+    this.reset();
+});
+
+     function showPage(pageId) {
+        const target = document.getElementById(pageId);
+        if (!target) return;
+
+        const sections = document.querySelectorAll('.page-section');
+        const innerPages = document.querySelectorAll('.page-content');
+
+        if (target.classList.contains('page-section')) {
+            sections.forEach(s => s.classList.remove('active-section'));
+            target.classList.add('active-section');
+            
+            if(pageId === 'home') {
+                innerPages.forEach(p => p.style.display = 'none');
+                document.getElementById('default-philosophy').style.display = 'block';
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        } 
+        else {
+            sections.forEach(s => s.classList.remove('active-section'));
+            document.getElementById('home').classList.add('active-section');
+            innerPages.forEach(p => p.style.display = 'none');
+            target.style.display = 'block';
+
+            const mainArea = document.getElementById('main-content-area');
+            const headerOffset = 100;
+            const elementPosition = mainArea.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+    function showRegistration() {
+    document.getElementById("registrationForm").style.display = "block";
+}
+    function showPage(pageId) {
+        const target = document.getElementById(pageId);
+        if (!target) return;
+
+        const sections = document.querySelectorAll('.page-section');
+        const innerPages = document.querySelectorAll('.page-content');
+
+        if (target.classList.contains('page-section')) {
+            sections.forEach(s => s.classList.remove('active-section'));
+            target.classList.add('active-section');
+            
+            if(pageId === 'home') {
+                innerPages.forEach(p => p.style.display = 'none');
+                document.getElementById('default-philosophy').style.display = 'block';
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        } 
+        else {
+            sections.forEach(s => s.classList.remove('active-section'));
+            document.getElementById('home').classList.add('active-section');
+            innerPages.forEach(p => p.style.display = 'none');
+            target.style.display = 'block';
+
+            // --- Scroll Fix ---
+            // Page seedha content area (Sidebar ke paas) scroll hoga, image ke upar nahi jayega
+            const mainArea = document.getElementById('main-content-area');
+            const headerOffset = 100;
+            const elementPosition = mainArea.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+    }
+  </script>
+  
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const links = document.querySelectorAll(".lecture-link");
+  const player = document.getElementById("audioPlayer");
+  const title = document.getElementById("nowPlaying");
+
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const file = this.getAttribute("data-file");
+
+      player.pause();
+      player.src = file;
+      player.load();
+      player.play();
+
+      title.innerText = "Now Playing: " + this.innerText;
+    });
+  });
+
+});
+</script>
+</body>
+</html>
