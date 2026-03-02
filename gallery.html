@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namokar Tirth - Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Sidebar same as above -->
+    <div id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-gradient-to-b from-orange-500 to-yellow-600 text-white shadow-lg z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-6">Namokar Tirth</h2>
+            <nav>
+                <a href="index.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">Home</a>
+                <a href="about.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">About</a>
+                <a href="history.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">History</a>
+                <a href="gallery.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">Gallery</a>
+                <a href="events.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">Events</a>
+                <a href="contact.html" class="block py-2 px-4 rounded hover:bg-orange-700 transition">Contact</a>
+            </nav>
+            <button id="darkModeToggle" class="mt-6 p-2 rounded-full bg-yellow-500 hover:bg-yellow-600">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <button id="sidebarToggle" class="md:hidden fixed top-4 left-4 z-50 p-2 bg-orange-500 text-white rounded-full">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+    <div class="msd:ml-64 p-8">
+        <h1 class="text-4xl font-bold text-orange-600 mb-8">Gallery</h1>
+        <div class="grid md:grid-cols-3 gap-4">
+            <img src="https://via.placeholder.com/400x300?text=Temple+1" alt="Temple Image 1" class="gallery-img rounded-lg shadow-lg cursor-pointer">
+            <img src="https://via.placeholder.com/400x300?text=Temple+2" alt="Temple Image 2" class="gallery-img rounded-lg shadow-lg cursor-pointer">
+            <img src="https://via.placeholder.com/400x300?text=Temple+3" alt="Temple Image 3" class="gallery-img rounded-lg shadow-lg cursor-pointer">
+            <!-- Add more images as per original site -->
+        </div>
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden
